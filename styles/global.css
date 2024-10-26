@@ -1,0 +1,256 @@
+/* src/styles/global.css */
+/* ========= IMPORTS ========= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========= BASE STYLES ========= */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans text-gray-200 bg-gray-900;
+        font-family: 'Lora', serif; /* Usamos Lora para el cuerpo de texto */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif text-white;
+        font-family: 'Playfair Display', serif; /* Usamos Playfair Display para los títulos */
+    }
+
+    a {
+        @apply text-white;
+        font-family: 'Poppins', sans-serif; /* Usamos Poppins para los enlaces */
+    }
+
+    p {
+        font-family: 'Lora', serif; /* Aseguramos que los párrafos también usen Lora */
+    }
+}
+
+/* ========= COMPONENT STYLES ========= */
+@layer components {
+    /* --- Botones --- */
+    .btn-primary, .btn-secondary {
+        font-family: 'Poppins', sans-serif; /* Usamos Poppins para los botones */
+    }
+
+    /* --- Enlaces de navegación --- */
+    .nav-link {
+        font-family: 'Poppins', sans-serif; /* Poppins para la navegación */
+    }
+
+    /* --- Input del formulario --- */
+    .form-input {
+        font-family: 'Lora', serif; /* Lora para los elementos de formularios */
+    }
+
+    /* --- Tarjetas de habitación --- */
+    .room-card {
+        font-family: 'Lora', serif; /* Lora para cualquier texto dentro de las tarjetas */
+    }
+
+    /* --- Footer y enlaces sociales --- */
+    .footer-link {
+        font-family: 'Poppins', sans-serif; /* Poppins para los enlaces en el footer */
+    }
+}
+
+/* ========= UTILITY CLASSES ========= */
+@layer utilities {
+    /* --- Text Effects --- */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* --- Backdrop Effects --- */
+    .backdrop-blur {
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* ========= MOBILE MENU STYLES ========= */
+/* --- Menu Container --- */
+.mobile-menu {
+    @apply fixed top-0 right-0 h-full w-3/4 bg-gray-800 transform transition-transform duration-300 ease-in-out overflow-y-auto;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.mobile-menu-closing {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+/* --- Menu Overlay --- */
+.mobile-menu-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.mobile-menu-overlay-closing {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* --- Menu Links --- */
+.mobile-menu-link {
+    @apply block w-full py-2 text-center hover:text-red-400 transition-colors;
+}
+
+/* --- Menu Content Padding --- */
+.mobile-menu-content {
+    @apply p-6;
+}
+
+/* --- Close Button --- */
+.close-button {
+    @apply absolute top-4 right-4 text-white hover:text-red-400 transition-colors;
+}
+
+/* --- Menu Animations --- */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* ========= SCROLL ANIMATIONS ========= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========= MODAL STYLES ========= */
+.modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm;
+    z-index: 50;
+}
+
+.modal-content {
+    @apply bg-gray-800 rounded-lg shadow-xl p-6 max-w-md w-full mx-4;
+    animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========= ROOM CARD STYLES ========= */
+.room-card {
+    @apply transition-all duration-300 bg-gray-800 rounded-lg;
+}
+
+.room-card:hover {
+    @apply shadow-2xl -translate-y-2;
+}
+
+.room-card img {
+    @apply transition-transform duration-300;
+}
+
+.room-card:hover img {
+    @apply scale-105;
+}
+
+/* ========= PARALLAX EFFECT ========= */
+.parallax {
+    @apply relative min-h-screen bg-fixed bg-center bg-cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========= FOOTER STYLES ========= */
+.footer-link {
+    @apply text-gray-400 hover:text-red-400 transition-colors;
+}
+
+.social-icon {
+    @apply text-gray-400 transition-transform duration-300 ease-in-out w-8 h-8 ;
+}
+
+.social-icon:hover {
+    @apply scale-110 text-red-400;
+}
+
+/* ========= RESPONSIVE STYLES ========= */
+@media (max-width: 768px) {
+    /* --- Mobile Menu Adjustments --- */
+    .menu-dropdown {
+        @apply fixed top-0 right-0 h-full w-3/4 bg-gray-800 transform transition-transform duration-300 ease-in-out;
+    }
+
+    /* --- Button Sizes --- */
+    .btn-primary, .btn-secondary {
+        @apply px-3 py-2 text-sm;
+    }
+
+    /* --- Room Card Width --- */
+    .room-card {
+        @apply w-full;
+    }
+
+    /* --- Disable Fixed Background on Mobile --- */
+    .parallax {
+        background-attachment: scroll;
+    }
+
+    /* --- Larger Social Icons for Mobile --- */
+    .social-icon {
+        @apply w-10 h-10; /* Aumentado de w-8 h-8 a w-10 h-10 */
+    }
+
+    /* --- Social Icons Container Spacing --- */
+    .social-icons-container {
+        @apply space-x-6; /* Más espacio entre iconos en móvil */
+    }
+}

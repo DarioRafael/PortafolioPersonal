@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-gray-900 text-white antialiased;
+    }
+
+    /* Estilos de encabezados */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-sans;
+    }
+}
+
+@layer components {
+    /* Componente de botón principal */
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-2
+        bg-blue-600 text-white rounded-md
+        hover:bg-blue-700
+        transition-all duration-300 ease-in-out
+        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    }
+
+    /* Componente de botón secundario */
+    .btn-secondary {
+        @apply inline-flex items-center justify-center px-6 py-2
+        bg-gray-700 text-white rounded-md
+        hover:bg-gray-600
+        transition-all duration-300 ease-in-out
+        focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    }
+
+    /* Estilos del navbar */
+    .navbar {
+        @apply fixed w-full z-40 transition-all duration-300;
+    }
+
+    .navbar-scrolled {
+        @apply bg-gray-900/95 backdrop-blur-md py-2 shadow-lg;
+    }
+
+    .navbar-transparent {
+        @apply bg-transparent py-4;
+    }
+
+    /* Enlaces de navegación */
+    .nav-link {
+        @apply text-white hover:text-blue-400 transition-colors duration-300
+        relative after:absolute after:bottom-0 after:left-0
+        after:w-0 after:h-0.5 after:bg-blue-400
+        after:transition-all after:duration-300
+        hover:after:w-full;
+    }
+
+    /* Contenedor principal */
+    .main-container {
+        @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Tarjetas */
+    .card {
+        @apply bg-gray-800 rounded-lg overflow-hidden
+        shadow-lg hover:shadow-xl
+        transition-all duration-300 ease-in-out;
+    }
+
+    /* Grid responsivo */
+    .responsive-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+    }
+
+    /* Secciones */
+    .section {
+        @apply py-16 sm:py-24;
+    }
+
+    /* Títulos de sección */
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold text-center mb-12
+        relative
+        after:content-[''] after:block after:w-24 after:h-1
+        after:bg-blue-400 after:mx-auto after:mt-4;
+    }
+
+    /* Efectos hover para tarjetas sociales */
+    .social-link {
+        @apply hover:text-blue-400 transition-colors duration-300
+        transform hover:scale-110;
+    }
+
+    /* Efecto parallax para hero section */
+    .parallax {
+        @apply relative bg-fixed bg-center bg-cover
+        min-h-screen flex items-center justify-center;
+    }
+
+    /* Overlay para secciones oscuras */
+    .dark-overlay {
+        @apply absolute inset-0 bg-black/50;
+    }
+
+    /* Animaciones para elementos que aparecen */
+    .fade-in {
+        @apply opacity-0 translate-y-4
+        animate-[fadeIn_1s_ease-out_forwards];
+    }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el menú móvil */
+.mobile-menu {
+    @apply fixed top-0 right-0 h-screen w-64
+    bg-gray-900 shadow-lg z-50
+    transform transition-transform duration-300 ease-in-out;
+}
+
+.mobile-menu.open {
+    @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+    @apply translate-x-full;
+}
+
+/* Estilos para el scroll to top button */
+.scroll-to-top {
+    @apply fixed bottom-8 right-8
+    p-3 bg-blue-600 text-white rounded-full
+    shadow-lg hover:bg-blue-700
+    transition-colors duration-300
+    transform hover:scale-110
+    focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Estilos para las skills badges */
+.skill-badge {
+    @apply px-3 py-1 rounded-full text-sm
+    bg-gray-700 hover:bg-blue-600
+    transition-all duration-300
+    transform hover:scale-105;
+}
+
+/* Estilos para el footer */
+.footer-section {
+    @apply space-y-4;
+}
+
+.footer-title {
+    @apply text-xl font-bold mb-4
+    after:content-[''] after:block after:w-12 after:h-0.5
+    after:bg-blue-400 after:mt-2;
+}
+
+/* Efectos de hover para imágenes */
+.image-hover {
+    @apply transition-transform duration-300
+    hover:scale-105 hover:shadow-xl;
+}
+
+/* Estilos para formularios */
+.form-input {
+    @apply w-full px-4 py-2 rounded-md
+    bg-gray-700 border border-gray-600
+    focus:border-blue-400 focus:ring-2 focus:ring-blue-400
+    transition-all duration-300;
+}
+
+.form-label {
+    @apply block text-sm font-medium mb-2;
+}
+
+/* Estilos para tooltips */
+.tooltip {
+    @apply relative inline-block;
+}
+
+.tooltip-text {
+    @apply invisible absolute z-10 p-2
+    bg-gray-800 text-white text-sm rounded-md
+    -translate-y-full left-1/2 -translate-x-1/2
+    opacity-0 transition-all duration-300
+    group-hover:visible group-hover:opacity-100;
+}
+
+/* Estilos para la barra de progreso */
+.progress-bar {
+    @apply w-full h-2 bg-gray-700 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+    @apply h-full bg-blue-600
+    transition-all duration-300 ease-out;
+}
