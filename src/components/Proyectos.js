@@ -13,31 +13,33 @@ const ProjectsPage = () => {
             image: "/api/placeholder/600/400",
             technologies: ["React", "Tailwind CSS", "Framer Motion"],
             category: "frontend",
-            githubLink: "https://github.com/tu-usuario/portfolio",
-            liveLink: "https://tu-portfolio.com",
+            githubLink: "https://github.com/DarioRafael/PortafolioPersonal",
+            liveLink: "https://portafolio-39n3jmbcx-dariorafaels-projects.vercel.app/",
             featured: true
         },
         {
             id: 2,
-            title: "API REST",
-            description: "API REST desarrollada con Node.js y Express, implementando autenticación JWT y documentación con Swagger.",
+            title: "Hotel Amigues",
+            description: "Aplicación web para la gestión de un hotel, desarrollada con React y Tailwind CSS, con enfoque en diseño responsivo y funcionalidades interactivas.",
             image: "/api/placeholder/600/400",
-            technologies: ["Node.js", "Express", "MongoDB"],
-            category: "backend",
-            githubLink: "https://github.com/tu-usuario/api",
+            technologies: ["React", "Tailwind CSS", "Framer Motion"],
+            category: "frontend",
+            githubLink: "https://github.com/DarioRafael/HotelAmigues",
+            liveLink: "https://hotel-amigues-9fmeq6eb7-dariorafaels-projects.vercel.app/",
             featured: true
         },
         {
             id: 3,
-            title: "App Móvil",
-            description: "Aplicación móvil desarrollada con Flutter para gestión de tareas y recordatorios.",
+            title: "Papelería La Modelo",
+            description: "Aplicación web y móvil para la gestión de inventarios y ventas de papelería, desarrollada con Flutter, Dart, Node.js, y Express, utilizando Azure para la base de datos y siguiendo principios de tecnología REST.",
             image: "/api/placeholder/600/400",
-            technologies: ["Flutter", "Dart", "Firebase"],
-            category: "mobile",
-            githubLink: "https://github.com/tu-usuario/app",
-            liveLink: "https://play.google.com/store",
-            featured: false
+            technologies: ["Flutter", "Dart", "Node.js", "Express", "Azure"],
+            category: "frontend",
+            githubLink: "https://github.com/DarioRafael/ModeloShopApp",
+            liveLink: "https://modelo-shop-app.vercel.app/",
+            featured: true
         }
+
     ];
 
     const categories = [

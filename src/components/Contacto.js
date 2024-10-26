@@ -191,9 +191,9 @@ const ContactPage = () => {
                                 ))}
                             </div>
                             <div className="mt-8">
-                                <h4 className="font-semibold mb-4">Horario de trabajo</h4>
+                                <h4 className="font-semibold mb-4">Horario de estudio</h4>
                                 <p className="text-gray-400">Lunes - Viernes</p>
-                                <p className="text-gray-400">9:00 AM - 6:00 PM</p>
+                                <p className="text-gray-400">1:00 PM - 7:00 PM</p>
                             </div>
                         </motion.div>
                     </div>
